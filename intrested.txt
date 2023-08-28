@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Styling</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+	<!-- Animation link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<!-- Font Awesome Icon Link -->
+	<script src="https://kit.fontawesome.com/f1f4d6ac4e.js" crossorigin="anonymous"></script>
+    <style>
+        .table-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            padding-top:0 px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            /* background: linear-gradient(147deg, #f1335c 0%,#5636e9 74%); */
+        }
+        
+        .table {
+            position: absolute;
+            height: auto;
+            width: 80%;
+            max-width: 1366px;
+            margin: auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0px 0px 5px rgba(80, 79, 79, 0.7);
+            /* border: 1px black solid; */
+        }
+        
+        .table-body h2 {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .table-body thead {
+            font-size: 20px;
+        }
+        
+        /* .table-body input[type=button] */
+        #send {
+            display: inline-block;
+            width: 100%;
+            /* max-width: 250px; */
+            box-sizing: border-box;
+            background-color: #d19c09;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            color: #000000;
+             text-align: center;
+            text-decoration: none;
+        }
+        #delete {
+            display: inline-block;
+            width: 100%;
+            /* max-width: 250px; */
+            box-sizing: border-box;
+            background-color: #d19c09;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            color: #000000;
+             text-align: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section Start -->
+	<header id="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2" id="logo">
+					<img src="image/home.png" alt="home">
+				</div>
+				<div class="col-md-9 ">
+					<ul class="nav nav-pills p-3" id="menu">
+						<li class="nav-item m-1 active"><a href="#home" class="nav-link">Home</a></li>
+						<li class="nav-item m-1"><a href="#rent" class="nav-link">Rent</a></li>
+						<li class="nav-item m-1"><a href="#build" class="nav-link">Building</a></li>
+						<li class="nav-item m-1"><a href="#contact" class="nav-link">Contact</a></li>
+						<li class="nav-item m-1"><a href="admin.html" class="nav-link"><i class="fa-solid fa-user"></i></a></li>
+						<a href="login.html"> <button type="button" class="btn btn-primary" id="btn">Get Started</button></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+<div class="back">
+			<a href="action.php" class="previous round intrested" style="padding-bottom: 0px;">&#8249;</a>
+			<!-- <a href="intrested.php" class="next round">&#8250;</a> -->
+		</div>
+		
+    <div class="table-body">
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="6">
+                        <h2>Intrrested customer</h2>
+                    </th>
+                </tr>
+            </thead>
+            <?php  
+            include("dbcon.php");
+            $qry="SELECT * FROM `intrested`";
+            $run=mysqli_query($con,$qry);
+            $i= mysqli_num_rows($run);
+             
+            ?>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Sr. No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email-Id</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Property</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Delete</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $count=0;
+                    while($row=mysqli_fetch_assoc($run))
+                        {
+                            $count++;
+                        ?>                         
+                        <tr>
+                        <th scope="row"><?php echo $count;?></th>
+                        <td><?php echo $row['name'];?></td>
+                        <td><?php echo $row['email'];?></td>
+                        <td><?php echo $row['address'];?> </td>
+                        <td><?php echo $row['product_id'];?></td>
+                        <td><a href="adminmailform.php?id=<?php echo $row['id'];?>" id="send">send</a></td>
+                        <td><a href="delete.php?id=<?php echo $row['id'];?>" id="delete">Delete</a></td>
+                    </tr>
+                    <?php 
+                        }
+                    ?>
+                    
+                </tbody>
+        </table>
+    </div>
+    <div class="con container">
+					
+					<input type="email"  name="email" placeholder="Enter Your Email">
+					<button type="search" class="btn submit" id="submit">Send</button>
+
+				</div>
+</body>
+
+</html>

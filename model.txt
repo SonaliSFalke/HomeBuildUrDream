@@ -1,0 +1,77 @@
+                       <!-- <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/home-log.jpg" style="width:70px;height: 70px;" onclick="currentDiv(2)" alt="living room">
+                        </div>
+                        <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/home.jpg" style="width:70px;height: 70px;" onclick="currentDiv(3)" alt="hall">
+                        </div>
+                        <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/rent10.jpeg" style="width:70px;height: 70px;" onclick="currentDiv(4)" alt="balkeny">
+                        </div>
+                        <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/rent16.jpeg" style="width:70px;height: 70px;" onclick="currentDiv(5)" alt="back side">
+                        </div>
+                        <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/rent17.jpg" style="width:70px;height: 70px;" onclick="currentDiv(6)" alt="front side">
+                        </div>
+                        <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/rent2.jpg" style="width:70px;height: 70px;" onclick="currentDiv(7)" alt="1bed room">
+                        </div>
+                        <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/window.jpg" style="width:70px;height: 70px;" onclick="currentDiv(8)" alt="2 bed room">
+                        </div>
+                        <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/rent4.jpeg" style="width:70px;height: 70px;" onclick="currentDiv(9)" alt="bath">
+                        </div>
+                       <div class="w3-col s1">
+                        <img class="demo w3-opacity w3-hover-opacity-off" src="image/rent12.jpg" style="width:70px;height: 70px;" onclick="currentDiv(10)" alt="furniture">
+                       </div>
+                       <div class="w3-col s1">
+                        <img class="demo w3-opacity w3-hover-opacity-off" src="image/rent7.jpg" style="width:70px;height: 70px;" onclick="currentDiv(11)" alt=" kitchen furniture">
+                       </div>
+                       <div class="w3-col s1">
+                         <img class="demo w3-opacity w3-hover-opacity-off" src="image/rent14.jpg" style="width:70px;height: 70px;" onclick="currentDiv(12)" alt="room">
+                        </div> -->
+                      </div> <!-- End row -->
+
+
+
+
+                      <?php
+					if (isset($_POST['submit']))
+					{
+						$userfirstname=$_POST['userfirstname'];
+						$userlastname=$_POST['userlastname'];
+						$useremail=$_POST['useremail'];
+						//$userphone=$_POST['userphone'];
+						$message=$_POST['message'];
+						$headers="mail from: ".$useremail;
+						
+						require_once('PHPMailer\PHPMailerAutoload.php');
+						$mail= new PHPMailer();
+						$mail->isSMTP();
+						$mail->SMTPAuth = true;
+						$mail->SMTPSecure='ssl';
+						$mail->Host='smtp.gmail.com';
+						$mail->Port='465';
+						$mail->isHTML();
+						$mail->Username='';
+						$mail->Password='';
+						
+						$mail->Subject='Mailed from Distant Learing contact form: '.$userfirstname." ".$userlastname;
+						$mail->Body=$useremail." > ".$message;
+						$mail->AddAddress('');
+
+						
+						if ($mail->Send())
+						{
+							echo"<div class='alert alert-success' name='shake'>
+										<strong>Mail Sent</strong></a>.
+										</div>";
+						}else
+						{
+							echo"<div class='alert alert-danger' name='shake'>
+										<strong>Mail Sent</strong></a>.
+										</div>";
+						}   
+							
+					}?>

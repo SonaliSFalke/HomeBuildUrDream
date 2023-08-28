@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f1f4d6ac4e.js" crossorigin="anonymous"></script>
+    <title>Search UI</title>
+    <style>
+        .con-s {
+            border: 2px rgb(255, 249, 249) double;
+            padding: 10px;
+            border-radius: 87px;
+            box-shadow: 5px 5px 35px rgb(185, 167, 167);
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            margin: 2% auto;
+        }
+        
+        .con-s input[type="email"] {
+            width: 50%;
+            border-radius: 22px;
+            padding: 0.5% 2%;
+        }
+        
+        .con-s .submit {
+            background: #f7c438;
+            border-radius: 30px 0px 30px 30px;
+            margin-left: 1%;
+            margin-top: 0%;
+            border: 1px #eef0f3 double;
+            padding: 1% 3%;
+            transition: all 2s linear;
+            width: 160px;
+            box-shadow: 1px 1px 10px rgb(186, 181, 221);
+        }
+        /* query part */
+        
+        .query {
+            display: flex;
+            justify-content: center;
+            padding: 3%;
+            background-color: goldenrod;
+        }
+        
+        .query-d {
+            border: 1px gray solid;
+            background-color: white;
+            width: 100%;
+        }
+        
+        .quer p {
+            font-size: 22px;
+        }
+        
+        .quer p,
+        .query-mail {
+            text-align: center;
+        }
+        
+        .query-mail textarea {
+            padding: 3px 5px;
+            outline: none;
+            border: 1px gray solid;
+            border-radius: 9px;
+        }
+        
+        .query-mail input[type=submit] {
+            width: auto;
+            background-color: #880a0a;
+            padding: 5px 35px;
+            outline: none;
+            border: none;
+            margin: 1% 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2" id="logo">
+                    <img src="image/home.png" alt="home">
+                </div>
+                <div class="col-md-9 ">
+                    <ul class="nav nav-pills p-3" id="menu">
+                        <li class="nav-item m-1 active"><a href="#home" class="nav-link">Home</a></li>
+                        <li class="nav-item m-1"><a href="rent.php" class="nav-link">Rent</a></li>
+                        <li class="nav-item m-1"><a href="flat.php" class="nav-link">Flat</a></li>
+                        <li class="nav-item m-1"><a href="pg.php" class="nav-link">P.G</a></li>
+                        <li class="nav-item m-1"><a href="#contact" class="nav-link">Contact</a></li>
+
+                        <li class="nav-item m-1"><a href="admin.php" class="nav-link"><i class="fa-solid fa-user"></i></a></li>
+                        <li class="nav-item m-1"><a href="admin.php" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <a href='sign-up.php'> <button type='button' class='btn btn-primary' id='btn'> Get Started</button></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="con-s">
+
+        <input type="email" name="email" placeholder="Enter Your Email">
+        <button type="submit" class="btn submit" id="submit">Send</button>
+
+    </div>
+    <section></section>
+    <div class="container-md property">
+        <div class="row prop">
+            <div class="col-lg-3 prop-img">
+                <img src="image/banner.png" alt="home" class="gallery-item" id="click"><br>
+
+            </div>
+            <div class="col-lg-6  prop-text">
+                <p><big> 3 BHK Flat for Sale</big> M2K Victoria Gardens, in Model Town </p>
+                <p>M2K Victoria Garde</p>
+                <div class="prop-block">
+                    <div class="prop-block1">
+                        <div class=" col-md-4 prop-area">
+                            <i class="fa-regular fa-square"></i><span><big> Dimension</big></span> <br>
+                            <span style="margin-left: 35px;">600 sq.ft</span>
+                        </div>
+                        <div class="col-md-4 prop-stat">
+                            <i class="fa-solid fa-building"></i><span><big>Furnished </big></span> <br>
+                            <span style="padding-left: 15px; max-width:100% ;font-size: 0.7em;">Yes</span>
+                        </div>
+                        <div class="col-md-4 prop-trans">
+                            <i class="fa-solid fa-house-chimney"></i></i><span><big>Property Type</big></span> <br>
+                            <span style="margin-left: 37px;font-size: 0.7em;">Flat</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="prop-add">
+                    3 BHK Flat Greater Kailash Luxury Homes, in Greater Kailash 1
+                </div>
+            </div>
+            <div class="col-lg-3  prop-rate">
+                <i class="fa-solid fa-indian-rupee-sign"></i> <span>25Lac</span>
+                <br>
+                <input type="submit" value="Intrested" id="btn-r" class="btn-r"><br>
+                <input type="submit" value="Add To Cart" id="btn-r" class="btn-r"><br>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="container-md property">
+        <div class="row prop">
+            <div class="col-lg-3 prop-img">
+                <img src="image/banner.png" alt="home" class="gallery-item" id="click"><br>
+
+            </div>
+            <div class="col-lg-6  prop-text">
+                <p><big> 3 BHK Flat for Sale</big> M2K Victoria Gardens, in Model Town </p>
+                <p>M2K Victoria Garde</p>
+                <div class="prop-block">
+                    <div class="prop-block1">
+                        <div class=" col-md-4 prop-area">
+                            <i class="fa-regular fa-square"></i><span><big> Dimension</big></span> <br>
+                            <span style="margin-left: 35px;">600 sq.ft</span>
+                        </div>
+                        <div class="col-md-4 prop-stat">
+                            <i class="fa-solid fa-building"></i><span><big>Furnished </big></span> <br>
+                            <span style="padding-left: 15px; max-width:100% ;font-size: 0.7em;">Yes</span>
+                        </div>
+                        <div class="col-md-4 prop-trans">
+                            <i class="fa-solid fa-house-chimney"></i></i><span><big>Property Type</big></span> <br>
+                            <span style="margin-left: 37px;font-size: 0.7em;">Flat</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="prop-add">
+                    3 BHK Flat Greater Kailash Luxury Homes, in Greater Kailash 1
+                </div>
+            </div>
+            <div class="col-lg-3  prop-rate">
+                <i class="fa-solid fa-indian-rupee-sign"></i> <span>25Lac</span>
+                <br>
+                <input type="submit" value="Intrested" id="btn-r" class="btn-r"><br>
+                <input type="submit" value="Add To Cart" id="btn-r" class="btn-r"><br>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    </section>
+
+    <!-- Query Part -->
+    <div class="container border query">
+        <div class="query-d">
+            <div class="quer">
+                <p> Have Any Query</p>
+            </div>
+            <div class="query-mail">
+                <textarea name="" id="" cols="50" rows="5" placeholder="Enter Your Query...."></textarea><br>
+                <input type="submit" value="Send">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="foot1">
+                Follow Us
+            </div>
+            <div class="f-social">
+                <a href="https://www.facebook.com "><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://help.twitter.com "><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com "><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com "><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="copyrights">
+            <p> copyrights © 2022 Home Build Your Dream. All Rights Reserved</p>
+
+            <p>designed by: Percept Infosystem</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!-- 
+    .con-s {
+    border: 2px rgb(255, 249, 249) double;
+    padding: 10px;
+    border-radius: 87px;
+    box-shadow: 5px 5px 35px rgb(185, 167, 167);
+	display: flex;
+justify-content: center;
+    width: 50%;
+    margin: 2% auto;
+}
+.con-s input[type="email"] {
+  width: 50%;
+  border-radius: 22px;
+  padding: 0.5% 2%;
+}
+.con-s .submit {
+
+    background: #f7c438;
+    border-radius: 30px 0px 30px 30px;
+    margin-left: 1%;
+    margin-top: 0%;
+    border: 1px #eef0f3 double;
+    padding: 1% 3%;
+    transition: all 2s linear;
+    width: 160px;
+    box-shadow: 1px 1px 10px rgb(186, 181, 221);
+
+}
+/* query part */
+.query{
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+    background-color:goldenrod;
+}
+.query-d{
+    border: 1px gray solid;
+    background-color: white;
+   width: 100%;
+}
+.quer p{
+    font-size: 22px;
+}
+.quer p, .query-mail{
+    text-align: center;
+}
+.query-mail textarea{
+    padding: 3px 5px;
+    outline: none;
+    border: 1px gray solid;
+    border-radius: 9px;
+}
+
+.query-mail input[type=submit]{
+    width: auto;
+    background-color: #880a0a;
+    padding: 5px 35px;
+    outline: none;
+    border: none;
+    margin: 1% 0;
+}
+ some changes
+
+Line 299
+.prop-rate {
+   margin: auto;
+}
+
+.prop-text big {margin remove}-335
+.prop-area span, .prop-stat span, .prop-trans span :{margin:remove}-362
+
+ -->

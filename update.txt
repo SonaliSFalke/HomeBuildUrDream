@@ -1,0 +1,30 @@
+	
+            <div class="col-md-6  prop-text">
+                <p><i class="fa-solid fa-location-pin"></i><big>3<?= $data['Description'];?></big> <?= $data['Address'];?>.</p>
+                <!-- <p>Khamla, Sonegaon, Nagpur.</p> -->
+                <div class="prop-block">
+                    <div class="prop-block1">
+                        <div class=" col-md-4 prop-area">
+                            <i class="fa-regular fa-square"></i><span>Dimension</span> <br>
+                            <span style="margin-left: 35px;"><?= $data['Dimension'];?></span>
+                        </div>
+                        <div class="col-md-4 prop-stat">
+                            <i class="fa-solid fa-building"></i><span>Furnished </span> <br>
+                            <span style="padding-left: 15px; max-width:100% ;font-size: 0.7em;"><?= $data['Furnished'];?></span>
+                        </div>
+                        <div class="col-md-4 prop-trans">
+                            <i class="fa-solid fa-house-chimney"></i></i><span>Discription</span> <br>
+                            <span style="margin-left: 37px;font-size: 0.7em;"><?= $data['Description'];?></span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="prop-add">
+                   <p><?= $data['Address'];?></p>
+                </div>
+            </div>
+            
+            <div class="col-md-3  prop-rate">
+                <i class="fa-solid fa-indian-rupee-sign"></i> <span><?= $data['Price'];?></span> 
+                <br>
+               
